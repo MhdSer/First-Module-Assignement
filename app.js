@@ -6,15 +6,17 @@ angular.module('MyApp', [])
 MyController.$inject = ['$scope'];
 function MyController($scope) {
 
-  $scope.dishes = '';
-  $scope.message= '';
+  $scope.dishes = null;
+  $scope.message= null;
   $scope.evaluate = function() {
-    var words = scope.dishes.split(' ');
+    var words = $scope.dishes.split(",");
     var wordsCount = wards.length;
-    if(wordsCount < "3"){
+    $scope.message= 'dasd';
+    if(wordsCount < 3){
       $scope.message='Enjoy';
+    }else{
+      $scope.message="it's Too Much ";
     }
   }
 }
-
 })();
