@@ -10,8 +10,7 @@ function MyController($scope) {
   $scope.message= null;
   $scope.evaluate = function() {
     var words = $scope.dishes.split(",");
-    var wordsCount = wards.length;
-    $scope.message= 'dasd';
+    var wordsCount = words.length;
     if(wordsCount < 3){
       $scope.message='Enjoy';
     }else{
