@@ -6,16 +6,37 @@ angular.module('MyApp', [])
 MyController.$inject = ['$scope'];
 function MyController($scope) {
 
-  $scope.dishes = null;
-  $scope.message= null;
+  $scope.dishes = "";
+  $scope.message= "";
+  $scope.fontColor ="";
+  $scope.borderColor ="";
+
   $scope.evaluate = function() {
     var words = $scope.dishes.split(",");
     var wordsCount = words.length;
-    if(wordsCount < 3){
-      $scope.message='Enjoy';
-    }else{
-      $scope.message="it's Too Much ";
+    if ($scope.dishes == "")
+    {
+        $scope.message='Please enter data first';
+        $scope.color = 'black';
+        $scope.borderColor ="red";
     }
-  }
-}
+    else if (words.includes(undefined)){
+                    $scope.message='There is an empty place';
+          }
+        else{
+              if(wordsCount < 4)
+              {
+                    $scope.message='Enjoy';
+                    $scope.color = 'green';
+                    $scope.borderColor ="green";
+              }
+              else
+              {
+                    $scope.message="it's Too Much ";
+                    $scope.color= 'green';
+                    $scope.borderColor ="green";
+              }
+            }
+          }
+        }
 })();
